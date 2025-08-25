@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lexend } from "next/font/google";
 import "./globals.css";
 import ProviderStore from "@/service/store/ProviderStore";
 import SessionProviderClient from "@/components/auth/SessionProviderClient";
@@ -13,6 +13,11 @@ export const metadata = {
   description:
     " endura is a no-code backend platform that allows you to create and manage your backend services without writing any code. It provides a user-friendly interface to design APIs, manage databases, and deploy your applications effortlessly.",
 };
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend",
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="h-full">
       <head>
         <meta name="theme-color" content="#000000" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -53,7 +58,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+          className={`${lexend.variable} ${geistSans.variable} ${geistMono.variable} antialiased h-full overflow-hidden`}
       >
         <ThemeProvider
           attribute="class"

@@ -1,6 +1,7 @@
 "use client";
 
 import HomePage from "@/components/home/HomePage";
+import { Sidebar } from "@/components/sidebar/sidebarComponent";
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 
