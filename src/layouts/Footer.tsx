@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaXTwitter, FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa6";
-import { FaTelegram } from "react-icons/fa";
+// import { FaTelegram } from "react-icons/fa";
 
 export default function Footer() {
   return (

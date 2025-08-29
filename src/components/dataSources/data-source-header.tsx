@@ -1,0 +1,25 @@
+
+// import { DatabaseIcon } from "lucide-react";
+import Image from "next/image";
+
+
+export function DataSourceHeader() {
+  return (
+    <div className="flex items-center gap-4 mb-12">
+      <div className="flex items-center gap-3">
+        <div className="relative">
+          <Image
+            src="/linear.svg"
+            alt="Database logo"
+            width={70}
+            height={70}
+          />
+        </div>
+        <div>
+          <h1 className="text-2xl font-semibold text-white">Data Source</h1>
+          <p className="text-gray-400 text-sm">View and manage the dataset powering this project APIs</p>
+        </div>
+      </div>
+    </div>
+  )
+}

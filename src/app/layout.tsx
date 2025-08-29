@@ -1,5 +1,4 @@
-
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Lexend } from "next/font/google";
 import "./globals.css";
 import ProviderStore from "@/service/store/ProviderStore";
 import SessionProviderClient from "@/components/auth/SessionProviderClient";
@@ -7,6 +6,7 @@ import { InstallPWA } from "@/components/InstallPWA";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+// import { usePathname } from "next/navigation";
 
 // TODO metadata
 export const metadata = {
@@ -14,6 +14,11 @@ export const metadata = {
   description:
     " endura is a no-code backend platform that allows you to create and manage your backend services without writing any code. It provides a user-friendly interface to design APIs, manage databases, and deploy your applications effortlessly.",
 };
+
+const lexend = Lexend({
+  subsets: ["latin"],
+  variable: "--font-lexend",
+})
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -38,6 +43,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -54,7 +61,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${lexend.variable}  antialiased h-full`}
       >
         <ThemeProvider
           attribute="class"
@@ -64,10 +71,12 @@ export default function RootLayout({
         >
           <ProviderStore>
             <SessionProviderClient>
-              <Header />
-              <main className="min-h-screen bg-gray-50 dark:bg-gray-900">{children}</main>
-              <Footer />
-              <InstallPWA />
+              {/* <Header /> */}
+              <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
+                {children}
+              </main>
+              {/* <Footer />
+              <InstallPWA /> */}
             </SessionProviderClient>
           </ProviderStore>
         </ThemeProvider>
