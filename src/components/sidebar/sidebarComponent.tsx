@@ -99,21 +99,6 @@ export function Sidebar({ workspaceId }: { workspaceId: string }) {
           </div>
         )}
       </div>
-
-      {/* Expand/Collapse quick toggle (hidden in hover mode) */}
-      {sidebarMode !== "hover" && (
-        <button
-          onClick={toggleMode}
-          className="flex items-center justify-center p-2 text-slate-400 hover:text-white hover:bg-slate-800/50 rounded-lg transition-colors"
-          aria-label={isExpanded ? "Collapse sidebar" : "Expand sidebar"}
-        >
-          {isExpanded ? (
-            <ChevronLeft className="w-5 h-5" />
-          ) : (
-            <ChevronRight className="w-5 h-5" />
-          )}
-        </button>
-      )}
     </div>
   );
 

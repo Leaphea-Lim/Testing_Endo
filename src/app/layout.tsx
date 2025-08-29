@@ -6,6 +6,7 @@ import { InstallPWA } from "@/components/InstallPWA";
 import Header from "@/layouts/Header";
 import Footer from "@/layouts/Footer";
 import { ThemeProvider } from "@/components/theme-provider";
+import { Toaster } from "@/components/ui/sonner";
 // import { usePathname } from "next/navigation";
 
 // TODO metadata
@@ -75,6 +76,7 @@ export default function RootLayout({
               <main className="min-h-screen bg-gray-50 dark:bg-gray-900">
                 {children}
               </main>
+              <Toaster richColors position="top-right" />
               {/* <Footer />
               <InstallPWA /> */}
             </SessionProviderClient>

@@ -10,7 +10,7 @@ export default function WorkspaceLayout({
   return (
     <div className="flex h-screen">
       {/* Sidebar pinned on the left */}
-      <aside className="sticky h-[calc(100vh-3.5rem)] w-64">
+      <aside className="sticky h-[calc(100vh-3.5rem)]">
         <Sidebar workspaceId={params.workspaceId} />
       </aside>
 
